@@ -2,8 +2,50 @@ var EventEmitter = require('events').EventEmitter;
 var _ = require('lodash');
 var assign = require('object-assign');
 
-var dispatcher = require('./flux.dispatcher');
+var dispatcher = require('./dispatcher');
 var CHANGE_EVENT = 'CHANGE_EVENT';
+
+// class Store extends EventEmitter.prototype {
+
+//   getState() {
+//     return this.state;
+//   }
+
+//   setState(state) {
+//     this.state = _.extend(this.state, state);
+//   }
+
+//   emitChange() {
+//     this.emit(CHANGE_EVENT);
+//   }
+
+//   addChangeListener(callback) {
+//     this.on(CHANGE_EVENT, callback);
+//   }
+
+//   removeChangeListener(callback) {
+//     this.removeListener(CHANGE_EVENT, callback);
+//   }
+
+//   register(events) {
+//     var self = this;
+
+//     dispatcher.register(function (payload) {
+//       var action = payload.action;
+//       var promise = events[action.actionType];
+
+//       if (!_.isUndefined(promise)) {
+//         promise.apply(self, [payload])
+//           .then(function () {
+//             self.emitChange();
+//           });
+//       }
+//       return true;
+//     });
+//   }
+// }
+
+// Store.state = {};
 
 var Store = assign({}, EventEmitter.prototype, {
 

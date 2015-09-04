@@ -1,5 +1,5 @@
 import React    from 'react';
-import City     from './app/components/city/city';
+import Main     from './app/components/main';
 
 import Router   from 'react-router';
 
@@ -15,10 +15,10 @@ let Route = Router.Route;
 
 let routes = (
   <Route>
-    <Route name="city" path="/" handler={City}/>
+    <Route name="main" path="/" handler={Main}/>
   </Route>
 );
 
 Router.run(routes, (Handler) => {
-  React.render(<City/>, document.getElementById('container'));
+  React.render(<Main />, document.getElementById('container'));
 });

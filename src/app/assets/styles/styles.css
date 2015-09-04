@@ -1,0 +1,21 @@
+.row > div {
+    background: lightgrey;
+    border: 1px solid grey;
+}
+
+label {
+    display: inline-block;
+    width: 150px;
+    float: left;
+    clear: left;
+    text-align: right;
+    padding-right: 5px;    
+}
+.title {
+    font-weight: 700;
+    text-align: center;
+}
+input {
+  display: inline-block;
+  float: left;
+}
